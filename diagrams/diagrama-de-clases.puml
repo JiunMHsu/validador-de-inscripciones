@@ -1,0 +1,27 @@
+@startuml
+class Inscripcion {
+    - alumno: Alumno
+    - materiasAInscribir: List<Materia>
+
+    + aprobada(): boolean
+}
+
+class Alumno {
+    - legajo: Integer
+    - aprobadas: List<Materia>
+
+    + aprobo(... Materia): void
+    + puedeCursar(Materia): boolean
+}
+
+class Materia {
+    - correlativas: List<Materia>
+}
+
+Alumno --> Materia
+Materia --> Materia
+
+Inscripcion ..> Alumno
+Inscripcion ..> Materia
+
+@enduml

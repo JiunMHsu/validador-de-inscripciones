@@ -17,10 +17,6 @@ public class Alumno {
       Collections.addAll(this.aprobadas, materias);
    }
 
-   public List<Materia> getAprobadas() {
-      return this.aprobadas;
-   }
-
    public boolean puedeCursar(Materia materia) {
       return this.aprobadas.containsAll(materia.getCorrelativas());
    }
