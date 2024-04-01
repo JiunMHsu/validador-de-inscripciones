@@ -1,12 +1,20 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Alumno {
-   List<Materia> aprobadas;
+   private Integer legajo;
+   private List<Materia> aprobadas;
 
-   public Alumno(List<Materia> materiasAprobadas) {
-      this.aprobadas = materiasAprobadas;
+   public Alumno(int legajo) {
+      this.legajo = legajo;
+      this.aprobadas = new ArrayList<>();
+   }
+
+   public void aprobo(Materia ... materias) {
+      Collections.addAll(this.aprobadas, materias);
    }
 
    public List<Materia> getAprobadas() {
